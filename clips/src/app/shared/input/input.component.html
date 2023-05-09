@@ -13,4 +13,10 @@ class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
     <p *ngIf="control.errors?.email" class="text-red-400">
         You must enter a valid email address.
     </p>
+    <p *ngIf="control.errors?.min" class="text-red-400">
+        Must be at least 18 to create an account.
+    </p>
+    <p *ngIf="control.errors?.max" class="text-red-400">
+        Please enter a valid age.
+    </p>
 </ng-container>

@@ -17,7 +17,8 @@ export class RegisterComponent {
   ])
   age = new FormControl('', [
     Validators.required,
-    Validators.min(18)
+    Validators.min(18),
+    Validators.max(100)
   ])
   password = new FormControl('', [
     Validators.required
