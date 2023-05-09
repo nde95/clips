@@ -8,7 +8,7 @@
         duration-500 focus:outline-none rounded bg-transparent
         focus:border-indigo-400"
     placeholder="Enter Email" required 
-    pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" 
+    [pattern]="emailPattern" 
     autocomplete="email" />
     <p *ngIf="email.errors && email.touched && email.dirty" class="text-red-400">
         Email is invalid 
