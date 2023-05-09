@@ -30,8 +30,8 @@ export class RegisterComponent {
   ])
   phoneNumber = new FormControl('', [
     Validators.required,
-    Validators.minLength(13),
-    Validators.maxLength(13),
+    Validators.minLength(14),
+    Validators.maxLength(14),
   ])
   registerForm = new FormGroup({
    name: this.name,
