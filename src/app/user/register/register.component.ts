@@ -66,6 +66,7 @@ export class RegisterComponent {
       console.log(userCred);
       this.alertMsg = 'Success, your account has been created!';
       this.alertColor = 'green';
+      this.inSubmission = true
     } catch (error) {
       console.log(error);
 
@@ -74,8 +75,10 @@ export class RegisterComponent {
 
         if (firebaseError.code === 'auth/email-already-in-use') {
           this.alertMsg = 'The email address is already in use. Please use a different email.';
+          this.inSubmission = false;
         } else {
           this.alertMsg = 'An unexpected Firebase error has occurred. Please try again later.';
+          this.inSubmission = false;
         }
       } else {
         this.alertMsg = 'An unexpected error has occurred. Please try again later.';
