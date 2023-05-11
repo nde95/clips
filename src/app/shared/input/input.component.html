@@ -22,4 +22,7 @@ class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
     <p *ngIf="control.errors?.max" class="text-red-400">
         Please enter a valid age.
     </p>
+    <p *ngIf="control.errors?.noMatch" class="text-red-400">
+        Passwords do not match.
+    </p>
 </ng-container>
