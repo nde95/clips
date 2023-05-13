@@ -60,6 +60,8 @@ export class UploadComponent {
   }
 
   uploadFile() {
+    this.uploadForm.disable()
+
     this.showAlert = true;
     this.alertColor = 'blue';
     this.alertMsg = 'Uploading clip, please wait...';
@@ -95,6 +97,8 @@ export class UploadComponent {
         this.showPercentage = false;
       },
       error: (error) => {
+        this.uploadForm.enable()
+        
         this.alertColor = 'red';
         this.inSubmission = false;
         this.showPercentage = false;
