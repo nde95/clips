@@ -78,4 +78,18 @@ export class ManageComponent {
     })
   }
 
+  async copyToClipboard($event: MouseEvent, docID: string | undefined) {
+    $event.preventDefault()
+
+    if(!docID) {
+      return
+    }
+
+    const url = `${location.origin}/clip/${docID}`
+
+    await navigator.clipboard.writeText(url)
+
+    alert('Link copied to clipboard!')
+  }
+
 }
