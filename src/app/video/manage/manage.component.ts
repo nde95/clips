@@ -67,16 +67,21 @@ export class ManageComponent {
   }
 
   deleteClip($event: Event, clip: IClip) {
-    $event.preventDefault()
-
-    this.clipService.deleteClip(clip)
-
-    this.clips.forEach((element, index) => {
-      if(element.docID == clip.docID) {
-        this.clips.splice(index, 1)
-      }
-    })
+    $event.preventDefault();
+  
+    const confirmed = window.confirm("Are you sure you want to delete this clip?");
+  
+    if (confirmed) {
+      this.clipService.deleteClip(clip);
+  
+      this.clips.forEach((element, index) => {
+        if (element.docID == clip.docID) {
+          this.clips.splice(index, 1);
+        }
+      });
+    }
   }
+  
 
   async copyToClipboard($event: MouseEvent, docID: string | undefined) {
     $event.preventDefault()
