@@ -20,4 +20,5 @@ A video sharing platform built with Angular, RxJS, Tailwind CSS, and Firestore. 
 - Tailwind CSS
 - Firestore
 - FFmpeg
+- Video.js
 
